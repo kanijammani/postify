@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@layer base {
+    @keyframes floatingLight {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    body {
+        background-image: url('/background.png');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #ffffff;
+        /* White text for contrast */
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Overlay to ensure readability and add dynamic, professional feel */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Subtle, deep gradient that complements the background image */
+        background: linear-gradient(125deg, rgba(10, 10, 30, 0.85), rgba(45, 20, 80, 0.7), rgba(10, 40, 60, 0.8));
+        background-size: 300% 300%;
+        animation: floatingLight 20s ease infinite;
+        z-index: -1;
+        backdrop-filter: blur(2px);
+        /* Slight blur for depth */
+    }
+
+    /* Ensure app container uses transparency for glassmorphism */
+    #root {
+        background-color: transparent;
+        min-height: 100vh;
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+}
