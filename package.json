@@ -1,0 +1,11 @@
+{
+  "name": "postify-app",
+  "version": "1.0.0",
+  "description": "Postify Full-Stack Instagram Clone",
+  "scripts": {
+    "install:backend": "npm --prefix backend install",
+    "install:frontend": "npm --prefix frontend install",
+    "build": "npm --prefix backend install",
+    "start": "npm --prefix backend start"
+  }
+}
